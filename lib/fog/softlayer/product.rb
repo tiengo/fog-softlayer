@@ -38,6 +38,7 @@ module Fog
       #
       class Mock
         attr_accessor :default_domain
+        include Fog::Softlayer::Slapi
         include Fog::Softlayer::Compute::Shared
 
         def initialize(args)
@@ -52,6 +53,7 @@ module Fog
       #
       class Real
         attr_accessor :default_domain
+        include Fog::Softlayer::Slapi
         include Fog::Softlayer::Compute::Shared
 
         # Sends the real request to the real SoftLayer service.
@@ -137,20 +139,5 @@ module Fog
 
     end
 
-  end
-end
-
-## some helpers for some dirty work
-class String
-  def softlayer_camelize
-    self.split('_').inject([]){ |buffer,e| buffer.push(buffer.empty? ? e : e.capitalize) }.join
-  end
-
-  def softlayer_underscore
-    self.gsub(/::/, '/').
-        gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-        gsub(/([a-z\d])([A-Z])/,'\1_\2').
-        tr("-", "_").
-        downcase
   end
 end
