@@ -1,6 +1,6 @@
 ### DNS Examples
 
-To start using this service, if you're not used to fog we recommend you to read our [getting started](getting_started.md) guide.
+If you are unfamiliar with fog, we recommend reading our [getting started](getting_started.md) guide.
 
 
 #### Create a connection to SoftLayer DNS Service
