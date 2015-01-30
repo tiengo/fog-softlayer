@@ -1,5 +1,9 @@
 Welcome to the fog-softlayer examples!
 
+## Getting Started
+
+Not sure how to start using fog-softlayer? check our [Getting Started](getting_started.md) guide.
+
 ## SoftLayer Services
 
 * [Compute](compute.md)
