@@ -11,5 +11,6 @@ Not sure how to start using fog-softlayer? check our [Getting Started](getting_s
 * [Global IP Address](global_ip_address.md)
 * [Key Pairs](key_pairs.md)
 * [Network](Network.md)
+* [Product](product.md)
 * [Storage](storage.md)
 * [Tags](tags.md)
