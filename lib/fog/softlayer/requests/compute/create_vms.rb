@@ -64,7 +64,8 @@ module Fog
                 'globalIdentifier' => Fog::Softlayer.mock_global_identifier,
                 'operatingSystem' => {},
                 'primaryIpAddress' => Fog::Mock.random_ip,
-                'tagReferences' => []
+                'tagReferences' => [],
+                'postInstallScriptUri' => nil,
             }
 
             # clobber stubbed values where applicable

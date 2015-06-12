@@ -46,6 +46,7 @@ module Fog
         attribute :private_network_only,    :aliases => 'privateNetworkOnlyFlag'
         attribute :user_data,               :aliases => 'userData'
         attribute :uid,                     :aliases => 'globalIdentifier'
+        attribute :postinstall_script_uri,  :aliases => 'postInstallScriptUri'
 
         def initialize(attributes = {})
           # Forces every request inject bare_metal parameter
@@ -67,7 +68,7 @@ module Fog
         def bare_metal?
           bare_metal
         end
-        
+
         def bare_metal
           @bare_metal
         end
@@ -79,6 +80,10 @@ module Fog
 
         def datacenter
           attributes[:datacenter][:name] unless attributes[:datacenter].nil?
+        end
+
+        def postinstall_script_uri=(name)
+          attributes[:postinstall_script_uri] = name
         end
 
         def delete_tags(tags)
@@ -436,6 +441,7 @@ module Fog
               :private_network_only => :privateNetworkOnlyFlag,
               :user_data => :userData,
               :network_components => :networkComponents,
+              :postinstall_script_uri => :postInstallScriptUri,
           }
 
           conditional = if bare_metal?
@@ -466,7 +472,7 @@ module Fog
               true
           end
         end
-        
+
         ##
         # Remove model attributes that aren't expected by the SoftLayer API
         def clean_attributes
